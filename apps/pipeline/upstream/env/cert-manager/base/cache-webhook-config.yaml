@@ -22,4 +22,4 @@ webhooks:
     objectSelector:
       matchLabels:
         pipelines.kubeflow.org/cache_enabled: "true"
-    admissionReviewVersions: ["v1beta1"]
+    admissionReviewVersions: ["v1"]

@@ -28,7 +28,7 @@ spec:
       subresources:
         status: {}
     - !!merge <<: *version
-      name: v1beta1
+      name: v1
       storage: true
   names:
     kind: ClusterTask
@@ -40,7 +40,7 @@ spec:
   conversion:
     strategy: Webhook
     webhook:
-      conversionReviewVersions: ["v1beta1"]
+      conversionReviewVersions: ["v1"]
       clientConfig:
         service:
           name: tekton-pipelines-webhook
@@ -83,7 +83,7 @@ spec:
   scope: Namespaced
 
 ---
-apiVersion: apiextensions.k8s.io/v1beta1
+apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: images.caching.internal.knative.dev
@@ -136,7 +136,7 @@ spec:
           # See issue: https://github.com/knative/serving/issues/912
           x-kubernetes-preserve-unknown-fields: true
     - !!merge <<: *version
-      name: v1beta1
+      name: v1
       storage: true
   names:
     kind: Pipeline
@@ -148,7 +148,7 @@ spec:
   conversion:
     strategy: Webhook
     webhook:
-      conversionReviewVersions: ["v1beta1"]
+      conversionReviewVersions: ["v1"]
       clientConfig:
         service:
           name: tekton-pipelines-webhook
@@ -198,7 +198,7 @@ spec:
       subresources:
         status: {}
     - !!merge <<: *version
-      name: v1beta1
+      name: v1
       storage: true
   names:
     kind: PipelineRun
@@ -213,7 +213,7 @@ spec:
   conversion:
     strategy: Webhook
     webhook:
-      conversionReviewVersions: ["v1beta1"]
+      conversionReviewVersions: ["v1"]
       clientConfig:
         service:
           name: tekton-pipelines-webhook
@@ -336,7 +336,7 @@ spec:
       subresources:
         status: {}
     - !!merge <<: *version
-      name: v1beta1
+      name: v1
       storage: true
   names:
     kind: Task
@@ -348,7 +348,7 @@ spec:
   conversion:
     strategy: Webhook
     webhook:
-      conversionReviewVersions: ["v1beta1"]
+      conversionReviewVersions: ["v1"]
       clientConfig:
         service:
           name: tekton-pipelines-webhook
@@ -398,7 +398,7 @@ spec:
       subresources:
         status: {}
     - !!merge <<: *version
-      name: v1beta1
+      name: v1
       storage: true
   names:
     kind: TaskRun
@@ -413,7 +413,7 @@ spec:
   conversion:
     strategy: Webhook
     webhook:
-      conversionReviewVersions: ["v1beta1"]
+      conversionReviewVersions: ["v1"]
       clientConfig:
         service:
           name: tekton-pipelines-webhook

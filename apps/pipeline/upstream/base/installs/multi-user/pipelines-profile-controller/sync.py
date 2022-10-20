@@ -134,7 +134,7 @@ def server_factory(visualization_server_image,
                     len(children["Deployment.apps/v1"]) == 2 and
                     len(children["Service.v1"]) == 2 and
                     len(children["DestinationRule.networking.istio.io/v1alpha3"]) == 1 and
-                    len(children["AuthorizationPolicy.security.istio.io/v1beta1"]) == 1 and
+                    len(children["AuthorizationPolicy.security.istio.io/v1"]) == 1 and
                     "True" or "False"
             }
 
@@ -223,7 +223,7 @@ def server_factory(visualization_server_image,
                     }
                 },
                 {
-                    "apiVersion": "security.istio.io/v1beta1",
+                    "apiVersion": "security.istio.io/v1",
                     "kind": "AuthorizationPolicy",
                     "metadata": {
                         "name": "ml-pipeline-visualizationserver",

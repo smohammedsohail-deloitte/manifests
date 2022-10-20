@@ -19,7 +19,7 @@ spec:
           namespace: kubeflow
           path: /convert
       conversionReviewVersions:
-      - v1beta1
+      - v1
   group: serving.kserve.io
   names:
     kind: InferenceService
@@ -53,7 +53,7 @@ spec:
     - jsonPath: .metadata.creationTimestamp
       name: Age
       type: date
-    name: v1beta1
+    name: v1
     schema:
       openAPIV3Schema:
         properties:
@@ -12788,20 +12788,20 @@ metadata:
   name: inferenceservice.serving.kserve.io
 webhooks:
 - admissionReviewVersions:
-  - v1beta1
+  - v1
   clientConfig:
     caBundle: Cg==
     service:
       name: kserve-webhook-server-service
       namespace: kubeflow
-      path: /mutate-serving-kserve-io-v1beta1-inferenceservice
+      path: /mutate-serving-kserve-io-v1-inferenceservice
   failurePolicy: Fail
   name: inferenceservice.kserve-webhook-server.defaulter
   rules:
   - apiGroups:
     - serving.kserve.io
     apiVersions:
-    - v1beta1
+    - v1
     operations:
     - CREATE
     - UPDATE
@@ -12809,7 +12809,7 @@ webhooks:
     - inferenceservices
   sideEffects: None
 - admissionReviewVersions:
-  - v1beta1
+  - v1
   clientConfig:
     caBundle: Cg==
     service:
@@ -12849,20 +12849,20 @@ metadata:
   name: inferenceservice.serving.kserve.io
 webhooks:
 - admissionReviewVersions:
-  - v1beta1
+  - v1
   clientConfig:
     caBundle: Cg==
     service:
       name: kserve-webhook-server-service
       namespace: kubeflow
-      path: /validate-serving-kserve-io-v1beta1-inferenceservice
+      path: /validate-serving-kserve-io-v1-inferenceservice
   failurePolicy: Fail
   name: inferenceservice.kserve-webhook-server.validator
   rules:
   - apiGroups:
     - serving.kserve.io
     apiVersions:
-    - v1beta1
+    - v1
     operations:
     - CREATE
     - UPDATE
@@ -12881,7 +12881,7 @@ metadata:
   name: trainedmodel.serving.kserve.io
 webhooks:
 - admissionReviewVersions:
-  - v1beta1
+  - v1
   clientConfig:
     caBundle: Cg==
     service:

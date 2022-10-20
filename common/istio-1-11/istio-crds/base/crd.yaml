@@ -22,7 +22,7 @@ spec:
     singular: authorizationpolicy
   scope: Namespaced
   versions:
-  - name: v1beta1
+  - name: v1
     schema:
       openAPIV3Schema:
         properties:
@@ -1371,7 +1371,7 @@ spec:
       jsonPath: .metadata.creationTimestamp
       name: Age
       type: date
-    name: v1beta1
+    name: v1
     schema:
       openAPIV3Schema:
         properties:
@@ -2866,7 +2866,7 @@ spec:
     storage: true
     subresources:
       status: {}
-  - name: v1beta1
+  - name: v1
     schema:
       openAPIV3Schema:
         properties:
@@ -3069,7 +3069,7 @@ spec:
       jsonPath: .metadata.creationTimestamp
       name: Age
       type: date
-    name: v1beta1
+    name: v1
     schema:
       openAPIV3Schema:
         properties:
@@ -3148,7 +3148,7 @@ spec:
     singular: requestauthentication
   scope: Namespaced
   versions:
-  - name: v1beta1
+  - name: v1
     schema:
       openAPIV3Schema:
         properties:
@@ -3391,7 +3391,7 @@ spec:
       jsonPath: .metadata.creationTimestamp
       name: Age
       type: date
-    name: v1beta1
+    name: v1
     schema:
       openAPIV3Schema:
         properties:
@@ -3628,7 +3628,7 @@ spec:
     storage: true
     subresources:
       status: {}
-  - name: v1beta1
+  - name: v1
     schema:
       openAPIV3Schema:
         properties:
@@ -4741,7 +4741,7 @@ spec:
       jsonPath: .metadata.creationTimestamp
       name: Age
       type: date
-    name: v1beta1
+    name: v1
     schema:
       openAPIV3Schema:
         properties:
@@ -5534,7 +5534,7 @@ spec:
       jsonPath: .spec.address
       name: Address
       type: string
-    name: v1beta1
+    name: v1
     schema:
       openAPIV3Schema:
         properties:

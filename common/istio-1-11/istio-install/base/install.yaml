@@ -419,7 +419,7 @@ webhooks:
     # endpoint is ready.
   failurePolicy: Ignore
   sideEffects: None
-  admissionReviewVersions: [v1beta1, v1]
+  admissionReviewVersions: [v1, v1]
   objectSelector:
     matchExpressions:
     - key: istio.io/rev
@@ -449,7 +449,7 @@ webhooks:
     - '*'
   failurePolicy: Ignore
   sideEffects: None
-  admissionReviewVersions: [v1beta1, v1]
+  admissionReviewVersions: [v1, v1]
   objectSelector:
     matchExpressions:
     - key: istio.io/rev
@@ -2832,7 +2832,7 @@ webhooks:
     apiVersions: [v1]
     resources: [pods]
   failurePolicy: Fail
-  admissionReviewVersions: [v1beta1, v1]
+  admissionReviewVersions: [v1, v1]
   namespaceSelector:
     matchExpressions:
     - key: istio.io/rev
@@ -2862,7 +2862,7 @@ webhooks:
     apiVersions: [v1]
     resources: [pods]
   failurePolicy: Fail
-  admissionReviewVersions: [v1beta1, v1]
+  admissionReviewVersions: [v1, v1]
   namespaceSelector:
     matchExpressions:
     - key: istio.io/rev
@@ -2894,7 +2894,7 @@ webhooks:
     apiVersions: [v1]
     resources: [pods]
   failurePolicy: Fail
-  admissionReviewVersions: [v1beta1, v1]
+  admissionReviewVersions: [v1, v1]
   namespaceSelector:
     matchExpressions:
     - key: istio-injection
@@ -2922,7 +2922,7 @@ webhooks:
     apiVersions: [v1]
     resources: [pods]
   failurePolicy: Fail
-  admissionReviewVersions: [v1beta1, v1]
+  admissionReviewVersions: [v1, v1]
   namespaceSelector:
     matchExpressions:
     - key: istio-injection
@@ -3317,7 +3317,7 @@ spec:
           optional: true
           secretName: istio-kubeconfig
 ---
-apiVersion: policy/v1beta1
+apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
   name: istio-ingressgateway
@@ -3336,7 +3336,7 @@ spec:
       app: istio-ingressgateway
       istio: ingressgateway
 ---
-apiVersion: policy/v1beta1
+apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
   name: istiod

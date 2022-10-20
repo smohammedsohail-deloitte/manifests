@@ -18,7 +18,7 @@ webhooks:
       - apiGroups:
           - kubeflow.org
         apiVersions:
-          - v1beta1
+          - v1
         operations:
           - CREATE
           - UPDATE
@@ -45,7 +45,7 @@ webhooks:
       - apiGroups:
           - kubeflow.org
         apiVersions:
-          - v1beta1
+          - v1
         operations:
           - CREATE
           - UPDATE

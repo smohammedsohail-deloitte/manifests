@@ -1,4 +1,4 @@
-apiVersion: app.k8s.io/v1beta1
+apiVersion: app.k8s.io/v1
 kind: Application
 metadata:
   name: $(generateName)
@@ -8,7 +8,7 @@ spec:
       kind: Application
   descriptor: 
     type: tektoncd-install
-    version: v1beta1
+    version: v1
     description: installs tektoncd pipeline
     maintainers:
     - name: Kam Kasravi

@@ -50,14 +50,14 @@ git checkout $COMMIT
 echo "Copying katib manifests..."
 DST_DIR=$MANIFESTS_DIR/apps/katib/upstream
 rm -r $DST_DIR
-cp $SRC_DIR/manifests/v1beta1 $DST_DIR -r
+cp $SRC_DIR/manifests/v1 $DST_DIR -r
 
 
 echo "Successfully copied all manifests."
 
 echo "Updating README..."
-SRC_TXT="\[.*\](https://github.com/kubeflow/katib/tree/.*/manifests/v1beta1)"
-DST_TXT="\[$COMMIT\](https://github.com/kubeflow/katib/tree/$COMMIT/manifests/v1beta1)"
+SRC_TXT="\[.*\](https://github.com/kubeflow/katib/tree/.*/manifests/v1)"
+DST_TXT="\[$COMMIT\](https://github.com/kubeflow/katib/tree/$COMMIT/manifests/v1)"
 
 sed -i "s|$SRC_TXT|$DST_TXT|g" ${MANIFESTS_DIR}/README.md
 

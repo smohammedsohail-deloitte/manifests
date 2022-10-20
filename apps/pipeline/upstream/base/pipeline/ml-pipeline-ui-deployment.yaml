@@ -56,7 +56,7 @@ spec:
               - -S # show server response
               - -O
               - "-" # Redirect output to stdout
-              - http://localhost:3000/apis/v1beta1/healthz
+              - http://localhost:3000/apis/v1/healthz
           initialDelaySeconds: 3
           periodSeconds: 5
           timeoutSeconds: 2
@@ -68,7 +68,7 @@ spec:
               - -S # show server response
               - -O
               - "-" # Redirect output to stdout
-              - http://localhost:3000/apis/v1beta1/healthz
+              - http://localhost:3000/apis/v1/healthz
           initialDelaySeconds: 3
           periodSeconds: 5
           timeoutSeconds: 2

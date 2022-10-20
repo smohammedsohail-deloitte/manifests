@@ -1,4 +1,4 @@
-apiVersion: app.k8s.io/v1beta1
+apiVersion: app.k8s.io/v1
 kind: Application
 metadata:
   name: flink-operator
@@ -24,7 +24,7 @@ spec:
     kind: FlinkCluster
   descriptor:
     type: "flink-operator"
-    version: "v1beta1"
+    version: "v1"
     description: "Flink Operator allows users to create and manage the \"FlinkCluster\" custom resource."
     maintainers:
     - name: Jiaxin Shan

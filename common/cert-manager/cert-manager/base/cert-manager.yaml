@@ -44,14 +44,14 @@ spec:
     strategy: Webhook
     # webhookClientConfig is required when strategy is `Webhook` and it configures the webhook endpoint to be called by API server.
     webhook:
-      # We don't actually support `v1beta1` but is listed here as it is a
+      # We don't actually support `v1` but is listed here as it is a
       # required value for [Kubernetes v1.16](kubernetes/kubernetes#82023). The
       # API server reads the supported versions in order, so _should always_
       # attempt a `v1` request which is understood by the cert-manager webhook.
-      # Any `v1beta1` request will return an error and fail closed for that
+      # Any `v1` request will return an error and fail closed for that
       # resource (the whole object request is rejected).
-      # When we no longer support v1.16 we can remove `v1beta1` from this list.
-      conversionReviewVersions: ["v1", "v1beta1"]
+      # When we no longer support v1.16 we can remove `v1` from this list.
+      conversionReviewVersions: ["v1", "v1"]
       clientConfig:
         #
         service:
@@ -398,7 +398,7 @@ spec:
                   format: date-time
       served: true
       storage: false
-    - name: v1beta1
+    - name: v1
       subresources:
         status: {}
       additionalPrinterColumns:
@@ -778,14 +778,14 @@ spec:
     strategy: Webhook
     # webhookClientConfig is required when strategy is `Webhook` and it configures the webhook endpoint to be called by API server.
     webhook:
-      # We don't actually support `v1beta1` but is listed here as it is a
+      # We don't actually support `v1` but is listed here as it is a
       # required value for [Kubernetes v1.16](kubernetes/kubernetes#82023). The
       # API server reads the supported versions in order, so _should always_
       # attempt a `v1` request which is understood by the cert-manager webhook.
-      # Any `v1beta1` request will return an error and fail closed for that
+      # Any `v1` request will return an error and fail closed for that
       # resource (the whole object request is rejected).
-      # When we no longer support v1.16 we can remove `v1beta1` from this list.
-      conversionReviewVersions: ["v1", "v1beta1"]
+      # When we no longer support v1.16 we can remove `v1` from this list.
+      conversionReviewVersions: ["v1", "v1"]
       clientConfig:
         #
         service:
@@ -1428,7 +1428,7 @@ spec:
                   type: integer
       served: true
       storage: false
-    - name: v1beta1
+    - name: v1
       subresources:
         status: {}
       additionalPrinterColumns:
@@ -2103,14 +2103,14 @@ spec:
     strategy: Webhook
     # webhookClientConfig is required when strategy is `Webhook` and it configures the webhook endpoint to be called by API server.
     webhook:
-      # We don't actually support `v1beta1` but is listed here as it is a
+      # We don't actually support `v1` but is listed here as it is a
       # required value for [Kubernetes v1.16](kubernetes/kubernetes#82023). The
       # API server reads the supported versions in order, so _should always_
       # attempt a `v1` request which is understood by the cert-manager webhook.
-      # Any `v1beta1` request will return an error and fail closed for that
+      # Any `v1` request will return an error and fail closed for that
       # resource (the whole object request is rejected).
-      # When we no longer support v1.16 we can remove `v1beta1` from this list.
-      conversionReviewVersions: ["v1", "v1beta1"]
+      # When we no longer support v1.16 we can remove `v1` from this list.
+      conversionReviewVersions: ["v1", "v1"]
       clientConfig:
         #
         service:
@@ -4048,7 +4048,7 @@ spec:
           jsonPath: .metadata.creationTimestamp
           name: Age
           type: date
-      name: v1beta1
+      name: v1
       schema:
         openAPIV3Schema:
           description: Challenge is a type to represent a Challenge request with an ACME server
@@ -5984,14 +5984,14 @@ spec:
     strategy: Webhook
     # webhookClientConfig is required when strategy is `Webhook` and it configures the webhook endpoint to be called by API server.
     webhook:
-      # We don't actually support `v1beta1` but is listed here as it is a
+      # We don't actually support `v1` but is listed here as it is a
       # required value for [Kubernetes v1.16](kubernetes/kubernetes#82023). The
       # API server reads the supported versions in order, so _should always_
       # attempt a `v1` request which is understood by the cert-manager webhook.
-      # Any `v1beta1` request will return an error and fail closed for that
+      # Any `v1` request will return an error and fail closed for that
       # resource (the whole object request is rejected).
-      # When we no longer support v1.16 we can remove `v1beta1` from this list.
-      conversionReviewVersions: ["v1", "v1beta1"]
+      # When we no longer support v1.16 we can remove `v1` from this list.
+      conversionReviewVersions: ["v1", "v1"]
       clientConfig:
         #
         service:
@@ -8338,7 +8338,7 @@ spec:
                         type: string
       served: true
       storage: false
-    - name: v1beta1
+    - name: v1
       subresources:
         status: {}
       additionalPrinterColumns:
@@ -10715,14 +10715,14 @@ spec:
     strategy: Webhook
     # webhookClientConfig is required when strategy is `Webhook` and it configures the webhook endpoint to be called by API server.
     webhook:
-      # We don't actually support `v1beta1` but is listed here as it is a
+      # We don't actually support `v1` but is listed here as it is a
       # required value for [Kubernetes v1.16](kubernetes/kubernetes#82023). The
       # API server reads the supported versions in order, so _should always_
       # attempt a `v1` request which is understood by the cert-manager webhook.
-      # Any `v1beta1` request will return an error and fail closed for that
+      # Any `v1` request will return an error and fail closed for that
       # resource (the whole object request is rejected).
-      # When we no longer support v1.16 we can remove `v1beta1` from this list.
-      conversionReviewVersions: ["v1", "v1beta1"]
+      # When we no longer support v1.16 we can remove `v1` from this list.
+      conversionReviewVersions: ["v1", "v1"]
       clientConfig:
         #
         service:
@@ -13069,7 +13069,7 @@ spec:
                         type: string
       served: true
       storage: false
-    - name: v1beta1
+    - name: v1
       subresources:
         status: {}
       additionalPrinterColumns:
@@ -15447,14 +15447,14 @@ spec:
     strategy: Webhook
     # webhookClientConfig is required when strategy is `Webhook` and it configures the webhook endpoint to be called by API server.
     webhook:
-      # We don't actually support `v1beta1` but is listed here as it is a
+      # We don't actually support `v1` but is listed here as it is a
       # required value for [Kubernetes v1.16](kubernetes/kubernetes#82023). The
       # API server reads the supported versions in order, so _should always_
       # attempt a `v1` request which is understood by the cert-manager webhook.
-      # Any `v1beta1` request will return an error and fail closed for that
+      # Any `v1` request will return an error and fail closed for that
       # resource (the whole object request is rejected).
-      # When we no longer support v1.16 we can remove `v1beta1` from this list.
-      conversionReviewVersions: ["v1", "v1beta1"]
+      # When we no longer support v1.16 we can remove `v1` from this list.
+      conversionReviewVersions: ["v1", "v1"]
       clientConfig:
         #
         service:
@@ -15777,7 +15777,7 @@ spec:
                   type: string
       served: true
       storage: false
-    - name: v1beta1
+    - name: v1
       subresources:
         status: {}
       additionalPrinterColumns:
@@ -17115,15 +17115,15 @@ webhooks:
           - UPDATE
         resources:
           - "*/*"
-    # We don't actually support `v1beta1` but is listed here as it is a
+    # We don't actually support `v1` but is listed here as it is a
     # required value for
     # [Kubernetes v1.16](https://github.com/kubernetes/kubernetes/issues/82025).
     # The API server reads the supported versions in order, so _should always_
     # attempt a `v1` request which is understood by the cert-manager webhook.
-    # Any `v1beta1` request will return an error and fail closed for that
+    # Any `v1` request will return an error and fail closed for that
     # resource (the whole object request is rejected). When we no longer
-    # support v1.16 we can remove `v1beta1` from this list.
-    admissionReviewVersions: ["v1", "v1beta1"]
+    # support v1.16 we can remove `v1` from this list.
+    admissionReviewVersions: ["v1", "v1"]
     # This webhook only accepts v1 cert-manager resources.
     # Equivalent matchPolicy ensures that non-v1 resource requests are sent to
     # this webhook (after the resources have been converted to v1).
@@ -17174,15 +17174,15 @@ webhooks:
           - UPDATE
         resources:
           - "*/*"
-    # We don't actually support `v1beta1` but is listed here as it is a
+    # We don't actually support `v1` but is listed here as it is a
     # required value for
     # [Kubernetes v1.16](https://github.com/kubernetes/kubernetes/issues/82025).
     # The API server reads the supported versions in order, so _should always_
     # attempt a `v1` request which is understood by the cert-manager webhook.
-    # Any `v1beta1` request will return an error and fail closed for that
+    # Any `v1` request will return an error and fail closed for that
     # resource (the whole object request is rejected). When we no longer
-    # support v1.16 we can remove `v1beta1` from this list.
-    admissionReviewVersions: ["v1", "v1beta1"]
+    # support v1.16 we can remove `v1` from this list.
+    admissionReviewVersions: ["v1", "v1"]
     # This webhook only accepts v1 cert-manager resources.
     # Equivalent matchPolicy ensures that non-v1 resource requests are sent to
     # this webhook (after the resources have been converted to v1).

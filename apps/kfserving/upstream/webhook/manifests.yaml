@@ -1,5 +1,5 @@
 ---
-apiVersion: admissionregistration.k8s.io/v1beta1
+apiVersion: admissionregistration.k8s.io/v1
 kind: MutatingWebhookConfiguration
 metadata:
   creationTimestamp: null
@@ -28,14 +28,14 @@ webhooks:
       service:
         name: $(webhookServiceName)
         namespace: $(kfservingNamespace)
-        path: /mutate-serving-kubeflow-org-v1beta1-inferenceservice
+        path: /mutate-serving-kubeflow-org-v1-inferenceservice
     failurePolicy: Fail
-    name: inferenceservice.kfserving-webhook-server.v1beta1.defaulter
+    name: inferenceservice.kfserving-webhook-server.v1.defaulter
     rules:
       - apiGroups:
           - serving.kubeflow.org
         apiVersions:
-          - v1beta1
+          - v1
         operations:
           - CREATE
           - UPDATE
@@ -69,7 +69,7 @@ webhooks:
           - pods
 
 ---
-apiVersion: admissionregistration.k8s.io/v1beta1
+apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingWebhookConfiguration
 metadata:
   creationTimestamp: null
@@ -98,21 +98,21 @@ webhooks:
       service:
         name: $(webhookServiceName)
         namespace: $(kfservingNamespace)
-        path: /validate-serving-kubeflow-org-v1beta1-inferenceservice
+        path: /validate-serving-kubeflow-org-v1-inferenceservice
     failurePolicy: Fail
-    name: inferenceservice.kfserving-webhook-server.v1beta1.validator
+    name: inferenceservice.kfserving-webhook-server.v1.validator
     rules:
       - apiGroups:
           - serving.kubeflow.org
         apiVersions:
-          - v1beta1
+          - v1
         operations:
           - CREATE
           - UPDATE
         resources:
           - inferenceservices
 ---
-apiVersion: admissionregistration.k8s.io/v1beta1
+apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingWebhookConfiguration
 metadata:
   creationTimestamp: null

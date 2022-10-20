@@ -1,9 +1,9 @@
 """Katib helper functions to create a Pipeline task."""
 from kfp import components
-from kubeflow.katib import (ApiClient, V1beta1AlgorithmSpec,
-                            V1beta1ExperimentSpec, V1beta1FeasibleSpace,
-                            V1beta1ObjectiveSpec, V1beta1ParameterSpec,
-                            V1beta1TrialParameterSpec, V1beta1TrialTemplate)
+from kubeflow.katib import (ApiClient, v1AlgorithmSpec,
+                            v1ExperimentSpec, v1FeasibleSpace,
+                            v1ObjectiveSpec, v1ParameterSpec,
+                            v1TrialParameterSpec, v1TrialTemplate)
 
 from . import watch
 
@@ -12,7 +12,7 @@ KATIB_LAUNCHER_URL = "https://raw.githubusercontent.com/kubeflow/pipelines/1.8.0
 
 GROUP = "kubeflow.org"
 PLURAL = "experiments"
-VERSION = "v1beta1"
+VERSION = "v1"
 
 
 def wait_to_create(name, namespace, timeout):
@@ -56,32 +56,32 @@ def create_katib_experiment_task(experiment_name, experiment_namespace,
     parallel_trial_count = 2
 
     # Objective specification.
-    objective = V1beta1ObjectiveSpec(
+    objective = v1ObjectiveSpec(
         type="minimize",
         goal=0.001,
         objective_metric_name="loss",
     )
 
     # Algorithm specification.
-    algorithm = V1beta1AlgorithmSpec(
+    algorithm = v1AlgorithmSpec(
         algorithm_name="random",
     )
 
     # Experiment search space.
     # In this example we tune learning rate and batch size.
     parameters = [
-        V1beta1ParameterSpec(
+        v1ParameterSpec(
             name="learning_rate",
             parameter_type="double",
-            feasible_space=V1beta1FeasibleSpace(
+            feasible_space=v1FeasibleSpace(
                 min="0.01",
                 max="0.05",
             ),
         ),
-        V1beta1ParameterSpec(
+        v1ParameterSpec(
             name="batch_size",
             parameter_type="int",
-            feasible_space=V1beta1FeasibleSpace(
+            feasible_space=v1FeasibleSpace(
                 min="80",
                 max="100",
             ),
@@ -154,16 +154,16 @@ def create_katib_experiment_task(experiment_name, experiment_namespace,
     }
 
     # Configure parameters for the Trial template.
-    trial_template = V1beta1TrialTemplate(
+    trial_template = v1TrialTemplate(
         primary_container_name="tensorflow",
         primary_pod_labels={"training.kubeflow.org/job-role": "master"},
         trial_parameters=[
-            V1beta1TrialParameterSpec(
+            v1TrialParameterSpec(
                 name="learningRate",
                 description="Learning rate for the training model",
                 reference="learning_rate",
             ),
-            V1beta1TrialParameterSpec(
+            v1TrialParameterSpec(
                 name="batchSize",
                 description="Batch size for the model",
                 reference="batch_size",
@@ -173,7 +173,7 @@ def create_katib_experiment_task(experiment_name, experiment_namespace,
     )
 
     # Create an Experiment from the above parameters.
-    experiment_spec = V1beta1ExperimentSpec(
+    experiment_spec = v1ExperimentSpec(
         max_trial_count=max_trial_count,
         max_failed_trial_count=max_failed_trial_count,
         parallel_trial_count=parallel_trial_count,

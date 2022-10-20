@@ -22,7 +22,7 @@ metadata:
     pipeline.tekton.dev/release: "devel"
 webhooks:
 - admissionReviewVersions:
-  - v1beta1
+  - v1
   clientConfig:
     service:
       name: tekton-pipelineloop-webhook
@@ -43,7 +43,7 @@ metadata:
     pipeline.tekton.dev/release: "devel"
 webhooks:
 - admissionReviewVersions:
-  - v1beta1
+  - v1
   clientConfig:
     service:
       name: tekton-pipelineloop-webhook

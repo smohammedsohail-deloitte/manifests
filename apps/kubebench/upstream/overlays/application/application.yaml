@@ -1,4 +1,4 @@
-apiVersion: app.k8s.io/v1beta1
+apiVersion: app.k8s.io/v1
 kind: Application
 metadata:
   name: kubebench
@@ -18,7 +18,7 @@ spec:
     kind: Deployment
   descriptor:
     type: kubebench
-    version: v1beta1
+    version: v1
     description: "Makes it easy to run benchmark jobs on Kubeflow with various system and model settings"
     maintainers: []
     owners: []

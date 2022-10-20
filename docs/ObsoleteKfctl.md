@@ -24,7 +24,7 @@ Kfctl traverses directories under manifests/kfdef to find and build kustomize ta
   - components are output as `<component>.yaml` under the kustomize subdirectory during `kfctl generate...`.
   - in order to output a component, a kustomization.yaml is created above the base or overlay directory and inherits common parameters, namespace and labels of the base or overlay. Additionally it adds the namespace and an application label.
 ```
-apiVersion: kustomize.config.k8s.io/v1beta1
+apiVersion: kustomize.config.k8s.io/v1
 kind: Kustomization
 bases:
   - <component>/{base|overlay/<overlay>}

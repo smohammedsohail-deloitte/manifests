@@ -1,6 +1,6 @@
 ---
 # Source: flink-operator/templates/flink-cluster-crd.yaml
-apiVersion: apiextensions.k8s.io/v1beta1
+apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   creationTimestamp: null
@@ -7274,6 +7274,6 @@ spec:
       - spec
       type: object
   versions:
-  - name: v1beta1
+  - name: v1
     served: true
     storage: true

@@ -14,7 +14,7 @@ patchesJson6902:
 - path: patches/old_crd.yaml
   target:
     group: apiextensions.k8s.io
-    version: v1beta1
+    version: v1
     kind: CustomResourceDefinition
     name: notebooks.kubeflow.org
 

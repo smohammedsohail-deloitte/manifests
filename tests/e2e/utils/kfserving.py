@@ -9,7 +9,7 @@ KFSERVING_URL = "https://raw.githubusercontent.com/kubeflow/pipelines/master/com
 def create_kfserving_task(model_name, model_namespace, tfjob_op,
                           model_volume_op):
     inference_service = '''
-apiVersion: "serving.kubeflow.org/v1beta1"
+apiVersion: "serving.kubeflow.org/v1"
 kind: "InferenceService"
 metadata:
   name: {}

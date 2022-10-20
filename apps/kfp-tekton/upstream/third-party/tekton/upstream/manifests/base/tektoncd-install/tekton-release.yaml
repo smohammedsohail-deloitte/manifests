@@ -35,7 +35,7 @@ metadata:
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-apiVersion: policy/v1beta1
+apiVersion: policy/v1
 kind: PodSecurityPolicy
 metadata:
   name: tekton-pipelines
@@ -542,7 +542,7 @@ spec:
       # starts to increment
       subresources:
         status: {}
-    - name: v1beta1
+    - name: v1
       served: true
       storage: true
       schema:
@@ -570,7 +570,7 @@ spec:
   conversion:
     strategy: Webhook
     webhook:
-      conversionReviewVersions: ["v1beta1"]
+      conversionReviewVersions: ["v1"]
       clientConfig:
         service:
           name: tekton-pipelines-webhook
@@ -675,7 +675,7 @@ spec:
           # See https://kubernetes.io/blog/2019/06/20/crd-structural-schema/
           # See issue: https://github.com/knative/serving/issues/912
           x-kubernetes-preserve-unknown-fields: true
-    - name: v1beta1
+    - name: v1
       served: true
       storage: true
       # Opt into the status subresource so metadata.generation
@@ -703,7 +703,7 @@ spec:
   conversion:
     strategy: Webhook
     webhook:
-      conversionReviewVersions: ["v1beta1"]
+      conversionReviewVersions: ["v1"]
       clientConfig:
         service:
           name: tekton-pipelines-webhook
@@ -768,7 +768,7 @@ spec:
       # starts to increment
       subresources:
         status: {}
-    - name: v1beta1
+    - name: v1
       served: true
       storage: true
       schema:
@@ -812,7 +812,7 @@ spec:
   conversion:
     strategy: Webhook
     webhook:
-      conversionReviewVersions: ["v1beta1"]
+      conversionReviewVersions: ["v1"]
       clientConfig:
         service:
           name: tekton-pipelines-webhook
@@ -984,7 +984,7 @@ spec:
       # starts to increment
       subresources:
         status: {}
-    - name: v1beta1
+    - name: v1
       served: true
       storage: true
       schema:
@@ -1012,7 +1012,7 @@ spec:
   conversion:
     strategy: Webhook
     webhook:
-      conversionReviewVersions: ["v1beta1"]
+      conversionReviewVersions: ["v1"]
       clientConfig:
         service:
           name: tekton-pipelines-webhook
@@ -1077,7 +1077,7 @@ spec:
       # starts to increment
       subresources:
         status: {}
-    - name: v1beta1
+    - name: v1
       served: true
       storage: true
       schema:
@@ -1121,7 +1121,7 @@ spec:
   conversion:
     strategy: Webhook
     webhook:
-      conversionReviewVersions: ["v1beta1"]
+      conversionReviewVersions: ["v1"]
       clientConfig:
         service:
           name: tekton-pipelines-webhook

@@ -2,7 +2,7 @@ from . import watch
 
 GROUP = "serving.kubeflow.org"
 PLURAL = "inferenceservices"
-VERSION = "v1beta1"
+VERSION = "v1"
 
 
 # wait_for_ready(name, namespace, timeout):

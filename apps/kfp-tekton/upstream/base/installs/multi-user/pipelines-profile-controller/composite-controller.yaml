@@ -29,7 +29,7 @@ spec:
     resource: destinationrules
     updateStrategy:
       method: InPlace
-  - apiVersion: security.istio.io/v1beta1
+  - apiVersion: security.istio.io/v1
     resource: authorizationpolicies
     updateStrategy:
       method: InPlace

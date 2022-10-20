@@ -61,7 +61,7 @@ installs/
 The kustomization files for app-standalone could then look like the following
 
 ```
-apiVersion: kustomize.config.k8s.io/v1beta1
+apiVersion: kustomize.config.k8s.io/v1
 ...
 patchesStrategicMerge:
 - ../../components/patches/deployment-external-db.yaml
@@ -193,7 +193,7 @@ profiles
 > example: /manifests/profiles/base/kustomization.yaml. Contains namespace, nameprefix, commonLabels.
 
 ```
-apiVersion: kustomize.config.k8s.io/v1beta1
+apiVersion: kustomize.config.k8s.io/v1
 kind: Kustomization
 resources:
 - crd.yaml
